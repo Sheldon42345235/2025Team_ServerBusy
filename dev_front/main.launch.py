@@ -3,10 +3,10 @@ from launch import LaunchDescription
 from launch.actions import ExecuteProcess
 
 def generate_launch_description():
-    # ¹¤×÷Ä¿Â¼
+    # å·¥ä½œç›®å½•
     work_dir = os.path.expanduser("~/dev_ws_A/src")
 
-    # 1. hobot_audio ½Úµã
+    # 1. hobot_audio èŠ‚ç‚¹
     hobot_audio_node = ExecuteProcess(
         cmd=[
             '/bin/bash', '-c',
@@ -22,7 +22,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 2. originbot_base ºÍ 3. audio_control ½Úµã
+    # 2. originbot_base å’Œ 3. audio_control èŠ‚ç‚¹
     audio_control_node = ExecuteProcess(
         cmd=[
             '/bin/bash', '-c',
@@ -42,7 +42,7 @@ def generate_launch_description():
 
    
 
-    # 5. ÈËÌå¸ú×Ù body_tracking_without_gesture ½Úµã
+    # 5. äººä½“è·Ÿè¸ª body_tracking_without_gesture èŠ‚ç‚¹
     body_tracking_node = ExecuteProcess(
         cmd=[
             '/bin/bash', '-c',
@@ -56,7 +56,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 6. Ë¤µ¹¼ì²â hobot_falldown_detection ½Úµã
+    # 6. æ‘”å€’æ£€æµ‹ hobot_falldown_detection èŠ‚ç‚¹
     falldown_detection_node = ExecuteProcess(
         cmd=[
             '/bin/bash', '-c',
@@ -70,7 +70,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 7. voice_command_node ½Úµã
+    # 7. voice_command_node èŠ‚ç‚¹
     voice_command_node = ExecuteProcess(
         cmd=[
             '/bin/bash', '-c',
@@ -82,9 +82,7 @@ def generate_launch_description():
         ],
         cwd=os.path.expanduser("~/dev_ws_A"),
         output='screen'
-    )
-
-   
+    )  
     return LaunchDescription([
         hobot_audio_node,
         audio_control_node,
